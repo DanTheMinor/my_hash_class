@@ -22,5 +22,13 @@ describe(MyHash) do
       test_hash.store('one', 'two')
       test_hash.store('x','y')
       expect(test_hash.has_value?('x')).to(eq(false))
+  end
+  describe('MyHash#length')
+    it('returns the number of (key, value) pairs in the hash') do
+      test_hash = MyHash.new()
+      test_hash.store('x', 'c')
+      test_hash.store('g', 'h')
+      test_hash.store('t', 'j')
+      expect(test_hash.length()).to(eq(3))
     end
 end

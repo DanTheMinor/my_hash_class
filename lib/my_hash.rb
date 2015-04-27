@@ -42,4 +42,8 @@ class MyHash
     end
     return false
   end
+
+  define_method(:length) do
+    @key.length
+  end
 end
