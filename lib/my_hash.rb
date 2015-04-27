@@ -1,11 +1,9 @@
 class MyHash
   define_method(:initialize) do
-    #@hash = [@key, @value]
     @key = []
     @value = []
   end
-  #MyHash.new('1', 'red' => '2', 'blue')
-  #MyHash.store(key, value)
+  
   define_method(:store) do |key, value|
     @key.push(key)
     @value.push(value)
@@ -44,6 +42,20 @@ class MyHash
   end
 
   define_method(:length) do
-    @key.length
+    @key.length()
+  end
+
+  define_method(:retrieve_keys) do
+      return @key
+  end
+
+  define_method(:retrieve_values) do
+      return @value
+  end
+
+  define_method(:merge) do |added_hash|
+    @key = @key.+(added_hash.retrieve_keys())
+    @value = @value.+(added_hash.retrieve_keys())
+
   end
 end

@@ -30,5 +30,15 @@ describe(MyHash) do
       test_hash.store('g', 'h')
       test_hash.store('t', 'j')
       expect(test_hash.length()).to(eq(3))
-    end
+  end
+  describe('MyHash#merge')
+    it('merges one hash with another, so that all (key, value) pairs are in the merged hash') do
+      test_hash = MyHash.new()
+      test_hash.store('x', 'c')
+      test_hash.store('a', 'b')
+      other_hash = MyHash.new()
+      other_hash.store('q', 'z')
+      test_hash.merge(other_hash)
+      expect(test_hash.has_key?('q')).to(eq(true))
+  end
 end
