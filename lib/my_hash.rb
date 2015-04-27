@@ -31,4 +31,15 @@ class MyHash
     end
     return false
   end
+
+  define_method(:has_value?) do |value|
+    index = 0
+    until @value.length() == index
+      if @value[index] == value
+        return true
+      end
+      index += 1
+    end
+    return false
+  end
 end

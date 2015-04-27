@@ -16,4 +16,11 @@ describe(MyHash) do
       test_hash.store('red', 'blue')
       expect(test_hash.has_key?('red')).to(eq(true))
   end
+  describe('MyHash#has_value?')
+    it('returns true if the value exists with the hash') do
+      test_hash = MyHash.new()
+      test_hash.store('one', 'two')
+      test_hash.store('x','y')
+      expect(test_hash.has_value?('x')).to(eq(false))
+    end
 end
